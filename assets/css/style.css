@@ -22,33 +22,58 @@ body {
 
 h3, h4 {
     color: #ffffff;
+    opacity: 0.9;
 }
 
 .content-container {
-    padding: 20px;
+    padding: 0px;
     height: 800px;
-    width: auto;
+    width: 100%;
     background-color: #ffffff;
-    border: 2px solid #ffffff;
+    
     margin-top: 60px;
-    z-index: -100px;
+    /* z-index: -100px; */
+    /* overflow: auto; */
     
 
 }
 
-.content-left {
-    border: 2px solid #ffffff;
-    background-color: #ffffff;
+.content-section {
     height: 600px;
+    margin-top: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
     
+    
+}
+
+.left-box {
+    background-color: #ffffff;
+    opacity: 0.2;
+    padding: 6px;
+    margin-top: 10px;
+    margin-left: 20px;
+    
+    
+
+}
+
+.right-box {
+    background-color: #ffffff;
+    opacity: 0.2;
+    padding: 6px;
+    margin-top: 10px;
+    margin-left: 20px;
+    
+
 }
 
 .container-fluid {
     margin: 0px;
     padding: 0px;
-    
     min-height: 100vh;
-    
+    width: 100%;
     
 }
 
@@ -74,7 +99,6 @@ img[alt*="jordan-background"] {
     top: 0;
     left: 0;
 
-    
     
 }
 
