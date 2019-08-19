@@ -33,6 +33,8 @@ h4 {
 
 }
 
+
+
 p {
     color: #000000!important;
     text-align: center;
@@ -63,12 +65,16 @@ p {
     
 }
 
+
+
 .left-box {
     background-color: #ffffff;
     opacity: 0.2;
     padding: 6px;
     margin-top: 10px;
     margin-left: 45px;
+    border: 10px solid #8867e2;
+    overflow: none;
     
 
 }
@@ -79,6 +85,8 @@ p {
     padding: 6px;
     margin-top: 10px;
     margin-left: 60px;
+    border: 10px solid #8867e2;
+    
     
 
 }
