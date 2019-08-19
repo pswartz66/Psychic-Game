@@ -1,3 +1,5 @@
+
+// list of all letters in an array
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 
                 'g', 'h', 'i', 'j', 'k', 'l', 
                 'm', 'n', 'o', 'p', 'q', 'r', 
@@ -14,5 +16,7 @@ var total_guesses = alphabet.length;
 // user_guessed_letters array
 // reset at game end
 var user_guessed_letters = [];
+
+
 
 
