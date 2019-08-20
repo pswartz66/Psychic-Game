@@ -153,6 +153,8 @@ var total_guesses = alphabet.length;
 // reset at game end
 var user_guessed_letters = [];
 
+// Array of wrong guesses
+var wrong_guesses = [];
 
 // Variables that hold references to the html id's
 var winsText = document.getElementById("wins-text");
@@ -173,15 +175,26 @@ document.onkeyup = function(event) {
     var letter = computerWord.includes(userGuess);
 
     if (letter) {
-        console.log(letter);
         console.log(userGuess);
+
+
     }
     else {
-        console.log(letter + " is not in computerWord");
-        console.log(userGuess);
+
+        wrong_guesses.push(userGuess);
+        if (wrong_guesses.length === incorrect_guesses) {
+            console.log("exit loop");
+        }
+
+
+        console.log(userGuess + " is not in computerWord");
+
 
     }
     
+    user_guessed_letters.push(userGuess);
+    console.log(user_guessed_letters);
+    console.log(wrong_guesses);
 
 };
 
