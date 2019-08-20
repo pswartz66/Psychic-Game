@@ -155,25 +155,33 @@ var user_guessed_letters = [];
 
 
 // Variables that hold references to the html id's
-/* var winsText = document.getElementById("wins-text");
+var winsText = document.getElementById("wins-text");
 var currentWord = document.getElementById("current-word");
 var placeholderKeys = document.getElementById("placeholder-keys");
 var guessesRemaining = document.getElementById("guesses-remaining");
-var guessedLetters = documment.getElementById("guessed-letters");
- */
+var guessedLetters = document.getElementById("guessed-letters");
 
 
-var computerWord = words[Math.floor(Math.random() * words.length)];
-
+// Generates a random word from the words array above
+var computerWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
 console.log(computerWord);
 
 document.onkeyup = function(event) {
 
+    // Set the keyboard click from the user to a variable
     var userGuess = event.key;
+    var letter = computerWord.includes(userGuess);
+
+    if (letter) {
+        console.log(letter);
+        console.log(userGuess);
+    }
+    else {
+        console.log(letter + " is not in computerWord");
+        console.log(userGuess);
+
+    }
     
 
-
-
-
-}
+};
 
