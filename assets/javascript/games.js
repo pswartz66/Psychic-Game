@@ -166,7 +166,21 @@ var guessedLetters = document.getElementById("guessed-letters");
 
 // Generates a random word from the words array above
 var computerWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+
+// Turn computerWord into an array of "_" 's 
+var computerWordList = []
+for (var i = 0; i < computerWord.length; i++) {
+    if (computerWord.charAt(i) !== " ") {
+        computerWordList.push("_");
+    }
+    else {
+        computerWordList.push(" ");
+    }
+}
+
 console.log(computerWord);
+console.log(computerWordList);
+
 
 document.onkeyup = function(event) {
 
@@ -176,8 +190,6 @@ document.onkeyup = function(event) {
 
     if (letter) {
         console.log(userGuess);
-
-
     }
     else {
 
@@ -193,8 +205,17 @@ document.onkeyup = function(event) {
     }
     
     user_guessed_letters.push(userGuess);
+
     console.log(user_guessed_letters);
     console.log(wrong_guesses);
 
+
+
+    
+
+
 };
+
+
+
 

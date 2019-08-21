@@ -10,6 +10,9 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     </link>
 
+    <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -53,7 +56,7 @@
                     <p>Press any key to get started!</p>
                     <p id="wins-text">Wins</p>
                     <p id="current-word">Current word</p>
-                    <p id="placeholder-keys">_ _ _ _ _ _ _</p>
+                    <p id="placeholder-keys"></p>
                     <p>Number of guesses remaining</p>
                     <p id="guesses-remaining">#</p>
                     <p id="guessed-letters">Letters guessed...</p>
@@ -72,6 +75,17 @@
 
     
     <script src="assets/javascript/games.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            
+            $("#placeholder-keys").append(computerWord);
+
+            
+
+        });
+    </script>
+
 
 </body>
 
