@@ -261,6 +261,7 @@ document.onkeyup = function(event) {
         }
 
         console.log('You guessed letter "' + userGuess + '" correctly');
+        console.log('There were "' + numberOfLetters(userGuess, computerWord) + " " + userGuess + "'s");
         console.log(computerWordList.join(' '));
         console.log(user_guessed_letters);
 
