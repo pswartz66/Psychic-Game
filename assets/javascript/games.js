@@ -166,6 +166,8 @@ var guessedLetters = document.getElementById("guessed-letters");
 
 // Generates a random word from the words array above
 var computerWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+console.log(computerWord);
+
 
 // Turn computerWord into an array of "_" 's 
 var computerWordList = []
@@ -194,12 +196,12 @@ for (var i = 0; i < computerWord.length; i++) {
 
 }
 
-console.log(computerWord);
+/* console.log(computerWord);
 console.log(computerWordList);
-console.log(computerWordString);
+console.log(computerWordString); */
 
 
-// create function to check if userguess is in guessed letters array
+// function to check if userguess is in guessed letters array
 // to be called later inside onkeyup 
 function doesExistInArray(myvalue, array) {
     for (var i = 0; i < array.length; i ++) {
@@ -210,27 +212,63 @@ function doesExistInArray(myvalue, array) {
             return false;
         }
     }
+};
 
+// function to check how many letters are in a string
+function numberOfLetters(myvalue, stringvalue) {
+    var my_count = 0;
+    for (var i = 0; i < stringvalue.length; i ++) {
+        if (stringvalue.charAt(i) === myvalue) {
+            my_count += 1;
+        }
+    }
+    return my_count;
 };
 
 
 
+
+
+
+
+// MAIN GAME LOGIC TAKES PLACE HERE ------------------------------------- //
 document.onkeyup = function(event) {
 
     // Set the keyboard click from the user to a variable
     var userGuess = event.key;
     var letter = computerWord.includes(userGuess);
 
+    if (wrong_guesses.length === incorrect_guesses) {
+        alert("GAME OVER!");
+    }
+
+    // push letter to user_guessed_letters array
+    user_guessed_letters.push(userGuess);
+
+    if (letter) {
+
+        for (var i = 0; i < computerWord.length; i ++) {
+            
+            if (computerWord.charAt(i) === userGuess) {
+                computerWordList[i] = userGuess;
+                
+            }
+            
+            
+            
+        }
 
     
 
-    if (letter) {
-        console.log(userGuess);
+
+        console.log("You guessed letter " + userGuess + " correctly");
+        console.log(computerWordList);
+        console.log(user_guessed_letters);
 
     }
     else {
 
-        wrong_guesses.push(userGuess);
+
         if (wrong_guesses.length === incorrect_guesses) {
             console.log("exit loop");
         }
@@ -241,16 +279,23 @@ document.onkeyup = function(event) {
 
     }
     
-    user_guessed_letters.push(userGuess);
+    
 
     /* console.log(user_guessed_letters);
     console.log(wrong_guesses);
  */
 
-    console.log(doesExistInArray(userGuess, user_guessed_letters));
+    // push userGuess to arrays
+    wrong_guesses.push(userGuess);
+    user_guessed_letters.push(userGuess);
+
+
+
+
+    /* console.log(doesExistInArray(userGuess, user_guessed_letters));
+    console.log(numberOfLetters(userGuess, computerWord)); */
 
 };
-
 
 
 
