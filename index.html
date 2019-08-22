@@ -59,8 +59,8 @@
                     <h4 id="placeholder-keys"></h4>
                     <p>Number of guesses remaining</p>
                     <p id="guesses-remaining">#</p>
-                    <p id="guessed-letters">Letters guessed...</p>
-
+                    <p>Letters guessed...</p>
+                    <p id="guessed-letters"></p>
 
                 </div>
 
@@ -78,10 +78,14 @@
     <script>
         $(document).ready(function () {
 
+
             $(document).keyup(function () {
 
                 $("#placeholder-keys").text(computerWordList.join(' '));
- 
+                
+                    $("#guessed-letters").text(user_guessed_letters.join(', '));
+
+
             });
         });
     </script>

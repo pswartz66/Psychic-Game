@@ -237,6 +237,7 @@ document.onkeyup = function(event) {
     var letter = computerWord.includes(userGuess);
     
     
+    
     // End game if user guessed 6 incorrect guesses
     if (wrong_guesses.length === incorrect_guesses) {
         alert("GAME OVER!");
@@ -272,6 +273,9 @@ document.onkeyup = function(event) {
             console.log("exit loop");
         }
 
+        else {
+            console.log("wrong guesses " + wrong_guesses.join(', '))
+        }
 
         console.log(userGuess + " is not in computerWord");
 
