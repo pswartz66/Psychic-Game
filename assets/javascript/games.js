@@ -229,8 +229,6 @@ function numberOfLetters(myvalue, stringvalue) {
 
 
 
-
-
 // MAIN GAME LOGIC TAKES PLACE HERE ------------------------------------- //
 document.onkeyup = function(event) {
 
@@ -239,12 +237,12 @@ document.onkeyup = function(event) {
     var letter = computerWord.includes(userGuess);
     
     
-
+    // End game if user guessed 6 incorrect guesses
     if (wrong_guesses.length === incorrect_guesses) {
         alert("GAME OVER!");
     }
 
-    // push letter to user_guessed_letters array
+    // Push letter to user_guessed_letters array
     user_guessed_letters.push(userGuess);
 
     if (letter) {
