@@ -56,7 +56,7 @@
                     <p>Press any key to get started!</p>
                     <p id="wins-text">Wins</p>
                     <p id="current-word">Current word</p>
-                    <p id="placeholder-keys"></p>
+                    <h4 id="placeholder-keys"></h4>
                     <p>Number of guesses remaining</p>
                     <p id="guesses-remaining">#</p>
                     <p id="guessed-letters">Letters guessed...</p>
@@ -79,7 +79,8 @@
         $(document).ready(function () {
 
             
-            $("#placeholder-keys").append(computerWord);
+            $("#placeholder-keys").append(computerWordString);
+            /* $("#guessed-letters").append(computerWordString); */
 
             
 

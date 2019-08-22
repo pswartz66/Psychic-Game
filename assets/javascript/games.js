@@ -129,7 +129,7 @@ var words = [
     'Demarre Carroll',	
     'Dirk Nowitzki',
     'Reggie Jackson',
-    'Pau Gasol',
+    'Paul Gasol',
     'Brook Lopez',	
     'Lonzo Ball']
 
@@ -169,6 +169,7 @@ var computerWord = words[Math.floor(Math.random() * words.length)].toLowerCase()
 
 // Turn computerWord into an array of "_" 's 
 var computerWordList = []
+
 for (var i = 0; i < computerWord.length; i++) {
     if (computerWord.charAt(i) !== " ") {
         computerWordList.push("_");
@@ -178,8 +179,25 @@ for (var i = 0; i < computerWord.length; i++) {
     }
 }
 
+// 
+var computerWordString = "";
+for (var i = 0; i < computerWord.length; i++) {
+    if (computerWord.charAt(i) !== " ") {
+        computerWordString += "_ ";
+        
+    }
+    else {
+
+        computerWordString += computerWord.charAt(i) + " ";
+        
+    }
+
+}
+
 console.log(computerWord);
 console.log(computerWordList);
+console.log(computerWordString);
+
 
 
 document.onkeyup = function(event) {
@@ -209,9 +227,6 @@ document.onkeyup = function(event) {
     console.log(user_guessed_letters);
     console.log(wrong_guesses);
 
-
-
-    
 
 
 };
