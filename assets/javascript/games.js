@@ -181,7 +181,7 @@ for (var i = 0; i < computerWord.length; i++) {
     }
 }
 
-// 
+// CHANGE THIS TO A FUNCTION TO BE CALLED TO CONVERT ARRAY OF _ TO LETTERS????????????
 var computerWordString = "";
 for (var i = 0; i < computerWord.length; i++) {
     if (computerWord.charAt(i) !== " ") {
