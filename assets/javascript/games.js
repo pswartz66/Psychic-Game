@@ -237,6 +237,8 @@ document.onkeyup = function(event) {
     // Set the keyboard click from the user to a variable
     var userGuess = event.key;
     var letter = computerWord.includes(userGuess);
+    
+    
 
     if (wrong_guesses.length === incorrect_guesses) {
         alert("GAME OVER!");
@@ -265,6 +267,7 @@ document.onkeyup = function(event) {
     }
     else {
 
+        wrong_guesses.push(userGuess);
 
         if (wrong_guesses.length === incorrect_guesses) {
             console.log("exit loop");
@@ -283,7 +286,7 @@ document.onkeyup = function(event) {
  */
 
     // push userGuess to arrays
-    wrong_guesses.push(userGuess);
+    /* wrong_guesses.push(userGuess); */
     user_guessed_letters.push(userGuess);
 
 
