@@ -199,6 +199,21 @@ console.log(computerWordList);
 console.log(computerWordString);
 
 
+// create function to check if userguess is in guessed letters array
+// to be called later inside onkeyup 
+function doesExistInArray(myvalue, array) {
+    for (var i = 0; i < array.length; i ++) {
+        if (array[i] === myvalue) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+};
+
+
 
 document.onkeyup = function(event) {
 
@@ -206,8 +221,12 @@ document.onkeyup = function(event) {
     var userGuess = event.key;
     var letter = computerWord.includes(userGuess);
 
+
+    
+
     if (letter) {
         console.log(userGuess);
+
     }
     else {
 
@@ -224,10 +243,11 @@ document.onkeyup = function(event) {
     
     user_guessed_letters.push(userGuess);
 
-    console.log(user_guessed_letters);
+    /* console.log(user_guessed_letters);
     console.log(wrong_guesses);
+ */
 
-
+    console.log(doesExistInArray(userGuess, user_guessed_letters));
 
 };
 
