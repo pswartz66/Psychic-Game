@@ -258,11 +258,8 @@ document.onkeyup = function(event) {
             
         }
 
-    
-
-
-        console.log("You guessed letter " + userGuess + " correctly");
-        console.log(computerWordList);
+        console.log('You guessed letter "' + userGuess + '" correctly');
+        console.log(computerWordList.join(' '));
         console.log(user_guessed_letters);
 
     }
