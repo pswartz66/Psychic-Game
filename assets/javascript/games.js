@@ -342,15 +342,10 @@ document.onkeyup = function(event) {
         console.log('There were "' + numberOfLetters(userGuess, computerWord) +  " " + userGuess + "'s");
         console.log(computerWordList.join(' '));
         
-        /* console.log(user_guessed_letters); */
-
-
-        
-    
-        /* console.log(computerWordList.join(' ')); */
 
 
     }
+
     else {
 
         wrong_guesses.push(userGuess);
@@ -369,25 +364,23 @@ document.onkeyup = function(event) {
     }
     
 
-    
-
     if (computerWordList === (computerWord.substr(0, computerWord.indexOf("+")) + computerWord.substr(computerWord.indexOf("+"), computerWord.length))) {
         alert("You win");
 
     }
 
 
-    console.log(computerWordList);
-    /* if (computerWordList.join(' ') === (computerWord.substr(0, computerWord.indexOf("+")) + computerWord.substr(computerWord.indexOf("+"), computerWord.length))) {
+    
+    if (computerWordList.join('') === (computerWord.substr(0, computerWord.indexOf(" ")) + "+" + computerWord.substr(computerWord.indexOf(" ") + 1, computerWord.length))) {
         alert("You win");
 
-    }
+    };
 
-    console.log(computerWordList.join(' ')); */
+    
 
     /* console.log(user_guessed_letters);
     console.log(wrong_guesses);
- */
+
 
     // push userGuess to arrays
     /* wrong_guesses.push(userGuess); */
