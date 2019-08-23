@@ -16,13 +16,14 @@ body {
     left: 0;
     right: 0;
     z-index: 100;
-    opacity: .6;
+    opacity: .8;
     
     
 }
 
 h3 {
     color: #ffffff;
+    
     
 }
 
@@ -85,7 +86,7 @@ p {
 
 .right-box {
     background-color: #ffffff;
-    opacity: 0.2;
+    opacity: 0.8;
     padding: 6px;
     margin-top: 10px;
     margin-left: 60px;
