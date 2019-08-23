@@ -26,6 +26,10 @@ h3 {
     
 }
 
+#placeholder-keys {
+    word-spacing: 10px;
+}
+
 h4 {
     color: #000000!important;
     text-align: center;

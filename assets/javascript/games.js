@@ -166,6 +166,10 @@ var guessedLetters = document.getElementById("guessed-letters");
 
 // Generates a random word from the words array above
 var computerWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+/* var testcomputerWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+var computerWord =  testcomputerWord.; */
+
+
 console.log(computerWord);
 
 
@@ -177,9 +181,13 @@ for (var i = 0; i < computerWord.length; i++) {
         computerWordList.push("_");
     }
     else {
-        computerWordList.push(" ");
+        computerWordList.push("  +  ");
     }
+
 }
+
+
+
 
 // CHANGE THIS TO A FUNCTION TO BE CALLED TO CONVERT ARRAY OF _ TO LETTERS????????????
 var computerWordString = "";
@@ -290,7 +298,7 @@ document.onkeyup = function(event) {
 
     // push userGuess to arrays
     /* wrong_guesses.push(userGuess); */
-    user_guessed_letters.push(userGuess);
+    
 
 
 

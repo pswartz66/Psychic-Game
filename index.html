@@ -46,11 +46,11 @@
 
             <div class="row content-section">
                 
-                <div class="col-5 left-box">
+                <!-- <div class="col-5 left-box">
                     <h4>Play Game!</h4>
-                </div>
+                </div> -->
 
-                <div class="col-5 right-box">
+                <div class="col-10 right-box">
                 
                     <!-- <h4>Play Game!</h4> -->
                     <p>Press any key to get started!</p>
@@ -78,11 +78,18 @@
     <script>
         $(document).ready(function () {
 
+            // display original word length
+            $("#placeholder-keys").text(computerWordList.join(' '));
 
+            
             $(document).keyup(function () {
 
+                // when user clicks letter store in an array and join letters 
+                // into a string
                 $("#placeholder-keys").text(computerWordList.join(' '));
                 
+                    // when user clicks letter display it as a guess at the
+                    // bottom of screen
                     $("#guessed-letters").text(user_guessed_letters.join(', '));
 
 
