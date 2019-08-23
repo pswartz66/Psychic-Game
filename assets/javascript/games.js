@@ -50,7 +50,7 @@ var words = [
     'Al Horford',
     'Kyrie Irving',
     'Nikola Jokic',
-    'Karl Anthony-Towns',
+    'Karl Anthony Towns',
     'Victor Oladipo',
     'LaMarcus Aldridge',
     'Klay Thompson',
@@ -146,7 +146,6 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f',
 var incorrect_guesses = 6;
 var correct_guesses = 0;
 
-
 // Total # of guesses = the # of letters in alphabet
 var total_guesses = alphabet.length;
 
@@ -169,28 +168,18 @@ var guessedLetters = document.getElementById("guessed-letters");
 // Generates a random word from the words array above
 var computerWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
 
-// var computerWord = "";
-
-/* function computerWordReset() {
-    computerWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
-}; */
-
-// computerWordReset();
-
 
 
 // Turn computerWord into an array of "_" 's 
-var computerWordList = []
-
+var computerWordList = [];
 for (var i = 0; i < computerWord.length; i++) {
     if (computerWord.charAt(i) !== " ") {
         computerWordList.push("_");
     }
     else {
-        computerWordList.push("  +  ");
+        computerWordList.push("+");
     }
-
-}
+};
 
 
 
@@ -199,17 +188,11 @@ var computerWordString = "";
 for (var i = 0; i < computerWord.length; i++) {
     if (computerWord.charAt(i) !== " ") {
         computerWordString += "_ ";
-        
     }
     else {
-
-        computerWordString += computerWord.charAt(i) + " ";
-        
+        computerWordString += computerWord.charAt(i) + " "; 
     }
-
-}
-
-
+};
 
 
 // function to check if userguess is in guessed letters array
@@ -246,6 +229,8 @@ var guessesRemaining = computerWord.length;
 // number of wins
 var wins = 0;
 
+// number of losses
+var losses = 0;
 
 console.log(computerWord);
 
@@ -255,13 +240,43 @@ function resetGame() {
     computerWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
     console.log(computerWord);
 
+    // Turn computerWord into an array of "_" 's 
+    var computerWordList = []
+    for (var i = 0; i < computerWord.length; i++) {
+        if (computerWord.charAt(i) !== " ") {
+            computerWordList.push("_");
+        }
+        else {
+            computerWordList.push("  +  ");
+        }
+    }
+
+
+    // CHANGE THIS TO A FUNCTION TO BE CALLED TO CONVERT ARRAY OF _ TO LETTERS????????????
+    // var computerWordString = "";
+    for (var i = 0; i < computerWord.length; i++) {
+        if (computerWord.charAt(i) !== " ") {
+            computerWordString += "_ ";
+        }
+        else {
+            computerWordString += computerWord.charAt(i) + " ";
+        }
+    }
+
+    wins += 1;
+    losses += 1;
+
 };
+
+var newcomputerWordList = [];
 
 // MAIN GAME LOGIC TAKES PLACE HERE ------------------------------------- //
 document.onkeyup = function(event) {
 
     // Set the keyboard click from the user to a variable
     var userGuess = event.key;
+
+    // letter = true if 'a' is in computerWord
     var letter = computerWord.includes(userGuess);
     
     console.log(computerWordLength);
@@ -290,8 +305,18 @@ document.onkeyup = function(event) {
 
         resetGame();
 
-    }
+        // document.getElementById("placeholder-keys").reset();
 
+        // playAgain Yes No?
+
+
+        
+        // reload page and update wins/losses
+        // document.location.reload();
+
+        console.log(losses);
+
+    }
 
 
 
@@ -299,22 +324,31 @@ document.onkeyup = function(event) {
     if (letter) {
 
         correct_guesses += 1;
-        
+
 
         for (var i = 0; i < computerWord.length; i ++) {
             
             if (computerWord.charAt(i) === userGuess) {
                 computerWordList[i] = userGuess;
+
                 
             }
             
             
         }
 
+
         console.log('You guessed letter "' + userGuess + '" correctly');
-        console.log('There were "' + numberOfLetters(userGuess, computerWord) + " " + userGuess + "'s");
+        console.log('There were "' + numberOfLetters(userGuess, computerWord) +  " " + userGuess + "'s");
         console.log(computerWordList.join(' '));
-        console.log(user_guessed_letters);
+        
+        /* console.log(user_guessed_letters); */
+
+
+        
+    
+        /* console.log(computerWordList.join(' ')); */
+
 
     }
     else {
@@ -334,7 +368,22 @@ document.onkeyup = function(event) {
 
     }
     
+
     
+
+    if (computerWordList === (computerWord.substr(0, computerWord.indexOf("+")) + computerWord.substr(computerWord.indexOf("+"), computerWord.length))) {
+        alert("You win");
+
+    }
+
+
+    console.log(computerWordList);
+    /* if (computerWordList.join(' ') === (computerWord.substr(0, computerWord.indexOf("+")) + computerWord.substr(computerWord.indexOf("+"), computerWord.length))) {
+        alert("You win");
+
+    }
+
+    console.log(computerWordList.join(' ')); */
 
     /* console.log(user_guessed_letters);
     console.log(wrong_guesses);
