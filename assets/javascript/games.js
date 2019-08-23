@@ -144,6 +144,8 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f',
                 
 // # of incorrect guesses upon which the game will end
 var incorrect_guesses = 6;
+var correct_guesses = 0;
+
 
 // Total # of guesses = the # of letters in alphabet
 var total_guesses = alphabet.length;
@@ -185,7 +187,6 @@ for (var i = 0; i < computerWord.length; i++) {
     }
 
 }
-
 
 
 
@@ -236,7 +237,6 @@ function numberOfLetters(myvalue, stringvalue) {
 
 
 
-
 // MAIN GAME LOGIC TAKES PLACE HERE ------------------------------------- //
 document.onkeyup = function(event) {
 
@@ -247,8 +247,16 @@ document.onkeyup = function(event) {
     
     
     // End game if user guessed 6 incorrect guesses
-    if (wrong_guesses.length === incorrect_guesses) {
+    if (wrong_guesses.length + 1  === incorrect_guesses) {
         alert("GAME OVER!");
+        computerWordList = [];
+        computerWordString = "";
+        user_guessed_letters = [];
+        wrong_guesses = [];
+        correct_guesses = 0;
+        incorrect_guesses = 6;
+
+
     }
 
     // Push letter to user_guessed_letters array
@@ -256,13 +264,14 @@ document.onkeyup = function(event) {
 
     if (letter) {
 
+        correct_guesses += 1;
+
         for (var i = 0; i < computerWord.length; i ++) {
             
             if (computerWord.charAt(i) === userGuess) {
                 computerWordList[i] = userGuess;
                 
             }
-            
             
             
         }
