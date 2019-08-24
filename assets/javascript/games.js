@@ -268,7 +268,7 @@ function resetGame() {
 
 };
 
-var newcomputerWordList = [];
+
 
 // MAIN GAME LOGIC TAKES PLACE HERE ------------------------------------- //
 document.onkeyup = function(event) {
@@ -276,18 +276,14 @@ document.onkeyup = function(event) {
     // Set the keyboard click from the user to a variable
     var userGuess = event.key;
 
-    // letter = true if 'a' is in computerWord
+    // letter returns true if 'a' is in computerWord
     var letter = computerWord.includes(userGuess);
-    
-    console.log(computerWordLength);
 
     // Push letter to user_guessed_letters array
     user_guessed_letters.push(userGuess);
 
     // determine how many guesses the user has remaining
     guessesRemaining = (computerWordLength - user_guessed_letters.length)
-    
-
 
     // End game if user guessed 6 incorrect guesses
     if (wrong_guesses.length + 1 === incorrect_guesses) {
@@ -309,8 +305,6 @@ document.onkeyup = function(event) {
 
         // playAgain Yes No?
 
-
-        
         // reload page and update wins/losses
         // document.location.reload();
 
@@ -318,34 +312,25 @@ document.onkeyup = function(event) {
 
     }
 
-
-
-
     if (letter) {
 
         correct_guesses += 1;
-
 
         for (var i = 0; i < computerWord.length; i ++) {
             
             if (computerWord.charAt(i) === userGuess) {
                 computerWordList[i] = userGuess;
 
-                
             }
             
-            
         }
-
 
         console.log('You guessed letter "' + userGuess + '" correctly');
         console.log('There were "' + numberOfLetters(userGuess, computerWord) +  " " + userGuess + "'s");
         console.log(computerWordList.join(' '));
         
-
-
     }
-
+    
     else {
 
         wrong_guesses.push(userGuess);
@@ -360,34 +345,17 @@ document.onkeyup = function(event) {
 
         // console.log(userGuess + " is not in computerWord");
 
-
     }
     
-
-    if (computerWordList === (computerWord.substr(0, computerWord.indexOf("+")) + computerWord.substr(computerWord.indexOf("+"), computerWord.length))) {
-        alert("You win");
-
-    }
-
 
     
     if (computerWordList.join('') === (computerWord.substr(0, computerWord.indexOf(" ")) + "+" + computerWord.substr(computerWord.indexOf(" ") + 1, computerWord.length))) {
         alert("You win");
+        wins ++;
+        console.log(wins);
 
-    };
+    }
 
-    
-
-    /* console.log(user_guessed_letters);
-    console.log(wrong_guesses);
-
-
-    // push userGuess to arrays
-    /* wrong_guesses.push(userGuess); */
-    
-
-    
-    
     
 
 };

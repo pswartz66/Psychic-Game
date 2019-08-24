@@ -51,9 +51,10 @@
                 </div> -->
 
                 <div class="col-10 right-box">
-                
+                    <button id="reset-button">Reset Game</button>
                     <!-- <h4>Play Game!</h4> -->
-                    <p>Press any key to get started!</p>
+                    <p id="shift-left">Press any key to get started!</p>
+                    
                     <p id="wins-text">Wins</p>
                     <h4 id="numberOfWins"></h4>
                     <p id="current-word">Current word</p>
@@ -89,7 +90,6 @@
                 // into a string
                 $("#placeholder-keys").text(computerWordList.join(' '));
 
-
                 // display the number of correct guesses
                 $("#numberOfWins").text(correct_guesses);
 
@@ -100,8 +100,20 @@
                 // bottom of screen
                 $("#guessed-letters").text(user_guessed_letters.join(', '));
 
+                // when user clicks reset button - make the palceholder keys for
+                // computerWord to display blank
+                $("#reset-button").click(function() {
+                    $("#placeholder-keys").empty();
+
+                });
+
 
             });
+
+            
+
+
+
         });
     </script>
 
