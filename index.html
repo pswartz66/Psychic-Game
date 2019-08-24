@@ -55,8 +55,12 @@
                     <!-- <h4>Play Game!</h4> -->
                     <p id="shift-left">Press any key to get started!</p>
                     
-                    <p id="wins-text">Wins</p>
-                    <h4 id="numberOfWins">#</h4>
+                    <p id="wins-text">Wins:  <span id="numberOfWins">0</span></p>
+                    <!-- <h4 id="numberOfWins">0</h4> -->
+
+                    <p id="losses-text">Losses:  <span id="numberOfLosses">0</span></p>
+                    <!-- <h4 id="numberOfLosses">0</h4> -->
+
                     <p id="current-word">Current word</p>
                     <h4 id="placeholder-keys"></h4>
                     <p>Number of guesses remaining</p>
@@ -103,19 +107,13 @@
                 // display the number of correct guesses
                 $("#numberOfWins").text(wins);
 
+                // display the number of correct guesses
+                $("#numberOfLosses").text(losses);
+
             });
 
             
-            // when user clicks reset button - make the palceholder keys for
-            // computerWord to display blank
-            $("#reset-button").click(function() {
-
-
-                /* $("#placeholder-keys").empty(); */
-                
-                
-
-            });
+            
 
 
         });
