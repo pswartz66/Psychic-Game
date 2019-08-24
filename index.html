@@ -87,6 +87,9 @@
             // display original word length
             $("#placeholder-keys").text(computerWordList.join(' '));
 
+            // display the number of correct guesses
+            $("#guesses-remaining").text(guessesRemaining);
+
 
             $(document).keyup(function () {
 
